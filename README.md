@@ -22,13 +22,13 @@ _This is an application which tests potential Haikus, and lets users know if the
     1. Clone project from GitHub repository, by copying and pasting the url of this GitHub repository following the $git clone command into your favorite command line program, such as Terminal on Mac.  
         - For example, $git clone https://github.com/nameOfUrl_
         
-    2. Run the following commands: 
+    2. In the command line run the following commands at the root level of your cloned repository folder: 
         - $npm install 
         - $bower install
         - $gulp build, OR $gulp **TBD** --production
         - $gulp watch (to preview live server updates)
         
-    3. Run test by
+    3. Run test by COMING SOON...
 
 
 ## Specifications
