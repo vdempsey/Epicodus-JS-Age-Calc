@@ -27,6 +27,19 @@ _This is an application which tests potential Haikus, and lets users know if the
         - $bower install
         - $gulp build, OR $gulp **TBD** --production
         - $gulp watch (to preview live server updates)
+        
+    3. Run test by
+
+
+## Specifications
+
+Colons can be used to align columns.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
 ## Known Bugs
 
