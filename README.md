@@ -9,7 +9,7 @@
 
 ## Description
 
-_This is an application which tests potential Haikus, and lets users know if they have written a proper Haiku. 
+_This is an application which tests potential Haikus, and lets users know if they have written a proper Haiku._ 
 
 
 ## Setup/Installation Requirements
@@ -35,7 +35,7 @@ _In Karma, when the second test fails, another test appears as failing, when tha
 
 ## Support and contact details
 
-_Please feel free to reach out with any questions, etc. to lowesusannah@gmail.com. _
+_Please feel free to reach out with any questions, etc. to lowesusannah@gmail.com._
 
 
 ## Technologies Used
