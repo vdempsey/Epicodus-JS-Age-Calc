@@ -15,18 +15,18 @@ _This is an application which tests potential Haikus, and lets users know if the
 ## Setup/Installation Requirements
 
   #### Required: 
-    + Node and Bower are installed on your machine globally
-    + Basic knowledge of ES6 vocabulary and syntax
+    - Node and Bower are installed on your machine globally
+    - Basic knowledge of ES6 vocabulary and syntax
 
   #### Installation Setup: 
     1. Clone project from GitHub repository, by copying and pasting the url of this GitHub repository following the $git clone command into your favorite command line program, such as Terminal on Mac.  
-        _For example, $git clone https://github.com/nameOfUrl_
+        - For example, $git clone https://github.com/nameOfUrl_
         
     2. Run the following commands: 
-        * $npm install 
-        * $bower install
-        * $gulp build, OR $gulp **TBD** --production
-        * $gulp watch _(to preview live server updates)_
+        - $npm install 
+        - $bower install
+        - $gulp build, OR $gulp **TBD** --production
+        - $gulp watch (to preview live server updates)
 
 ## Known Bugs
 
