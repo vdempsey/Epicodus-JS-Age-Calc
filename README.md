@@ -33,13 +33,13 @@ _This is an application which tests potential Haikus, and lets users know if the
 
 ## Specifications
 
-Colons can be used to align columns.
+coming soon...
 
-| Tables        | Are           | Cool  |
+| FPO        | FPO           | FPO  |
 | ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| FPO      | FPO | FPO |
+| FPO      | FPO      |   FPO |
+| FPO | FPO     |    FPO |
 
 ## Known Bugs
 
