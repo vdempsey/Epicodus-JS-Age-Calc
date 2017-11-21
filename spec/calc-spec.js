@@ -1,23 +1,21 @@
-import { Planet } from './../js/calc-backend.js';
+import { Planet, MyDate } from './../js/calc-backend.js';
 
-describe("ageInSec", function() {
-  // ageInSec
+describe("ageYearToSec", function() {
+
   it("should calculate entered age in seconds on Earth", function() {
     let earthAgeInYears = 3;
     let earth = new Planet(earthAgeInYears);
-    let output = earth.ageInSec(earthAgeInYears);
+    let output = earth.ageYearToSec(earthAgeInYears);
     expect(output).toEqual(3 * 365 * 86400);
   });
 
 });
 
-// describe("ageOnMars", function() {
-//
-//   it("should calculate entered age on Mars", function() {
-//     // let earthAgeInYears = " ";
-//     let earthAgeInYears = 1;
-//     let mars = new Planet(earthAgeInYears);
-//     expect(mars.ageOnMars()).toEqual(1.88);
-//   });
+describe("calcAgeInSec", function() {
 
-// });
+  it("should calculate the difference in seconds between current date and entered b-day", function() {
+    let birthday = new MyDate(2016 10 21);
+    let ageInSeconds = birthday.calcAgeInSec();
+    expect(ageInSeconds).toEqual(1 * 365 * 86400);
+  });
+}); //This test will initially fail. See notes about changing currentDate value in calc-backend.js for testing.

@@ -1,33 +1,12 @@
 
 export class Planet {
   constructor(name, years) {
-    this._name = name;
-    this._years = years;
+    this.name = name;
+    this.years = years;
   }
 
-  // get years() {
-  //   return this._years;
-  // }
 
-  // ageOnMars() {
-  //   let earthAgeInYears = 1;
-  //   let marsYears = parseInt(earthAgeInYears) * 1.88;
-  //   return marsYears;
-  // }
-  //
-  //  ageInSec(earthAgeInYears) {
-  //    return earthAgeInYears * 20;
-  //   // const earthDayInSec = 86400;
-  //   // const earthYearInDays = 365;
-  //   // const earthYearInSec = 20 //just for testing;
-  //   // // 365 * 86400;
-  //   // let earthAgeInYears = 1;
-  //   // let earthAgeInSec = earthAgeInYears * earthYearInSec;
-  //   // return earthAgeInSec;
-  //
-  // }
-
-ageInSec(earthAgeInYears) {
+ageYearToSec(earthAgeInYears) {
     const earthDaysInYear = 365;
     const earthDayInSec = 86400;
     const earthYearInSec = 365 * 86400;
@@ -35,4 +14,21 @@ ageInSec(earthAgeInYears) {
     // return output;
  }
 
+};
+
+
+export class MyDate {
+  constructor(year, month, date) {
+    this.userInput = new Date(year, month, date);
+  }
+
+
+    calcAgeInSec() {
+    //for testing, use:
+    // let currentDate = new Date('November 21, 2017');
+    let currentDate = new Date(); //comment this out when testing
+    let ageInSeconds = Math.round((currentDate.getTime() - this.userInput.getTime())/1000);
+    // 1 sec = 1000 miliseconds. getTime() returns miliseconds
+    return ageInSeconds;
+  }
 };

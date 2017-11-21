@@ -16,9 +16,16 @@
         <div class="calculator">
           <form id="calculator-form">
             <label for="number1">Enter your Age in Earth Years:</label>
-            <input id="age" type="number">
+            <input id="age" type="text">
+            <h5>Or enter your b-day</h5>
+            <label for="birth-year">Select Year:</label>
+            <select class="form-control" id="year">
+              <option>Select Year</option>
+            </select>
+            <!-- <label for="birthday">month/date/year</label> -->
+            <!-- <input id="month" type="text" placeholder="example: 04/12/1982"> -->
             <p>Did you know that the length of a solar year varies from planet to planet? For instance, a solar year on Mercury lasts 88 days. Press the buttons to find your age on featured planets.</p>
-            <h3 id="time"></h3>
+            <!-- <h3 id="time"></h3> -->
             <button type="button" id="seconds" class="btn">Earth Seconds</button>
             <button type="button" id="mercury" class="btn">Mercury Years</button>
             <button type="button" id="venus" class="btn">Venus Years</button>
