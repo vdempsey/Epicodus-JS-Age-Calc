@@ -14,7 +14,7 @@ describe("ageYearToSec", function() {
 describe("calcAgeInSec", function() {
 
   it("should calculate the difference in seconds between current date and entered b-day", function() {
-    let birthday = new MyDate(2016 10 21);
+    let birthday = new MyDate(2016, 10, 21);
     let ageInSeconds = birthday.calcAgeInSec();
     expect(ageInSeconds).toEqual(1 * 365 * 86400);
   });

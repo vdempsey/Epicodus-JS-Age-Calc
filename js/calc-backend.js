@@ -1,4 +1,3 @@
-
 export class Planet {
   constructor(name, years) {
     this.name = name;
@@ -6,7 +5,7 @@ export class Planet {
   }
 
 
-ageYearToSec(earthAgeInYears) {
+  ageYearToSec(earthAgeInYears) {
     const earthDaysInYear = 365;
     const earthDayInSec = 86400;
     const earthYearInSec = 365 * 86400;
@@ -24,8 +23,7 @@ export class MyDate {
 
 
     calcAgeInSec() {
-    //for testing, use:
-    // let currentDate = new Date('November 21, 2017');
+    // for testing, use: let currentDate = new Date(2017, 10, 21);
     let currentDate = new Date(); //comment this out when testing
     let ageInSeconds = Math.round((currentDate.getTime() - this.userInput.getTime())/1000);
     // 1 sec = 1000 miliseconds. getTime() returns miliseconds
