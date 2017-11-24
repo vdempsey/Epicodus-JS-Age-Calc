@@ -27,7 +27,7 @@ describe("calcMercuryYears", function() {
     let years = 2;
     let mercury = new Planet(years);
     let ageOnMercury = mercury.calcMercuryYears(years);
-    expect(ageOnMercury).toEqual(0.48);
+    expect(ageOnMercury).toEqual('0.48');
   });
 });
 
@@ -37,7 +37,7 @@ describe("calcVenusYears", function() {
     let years = 2;
     let venus = new Planet(years);
     let ageOnVenus = venus.calcVenusYears(years);
-    expect(ageOnVenus).toEqual(1.24);
+    expect(ageOnVenus).toEqual('1.24');
   });
 });
 
@@ -47,7 +47,7 @@ describe("calcMarsYears", function() {
     let years = 2;
     let mars = new Planet(years);
     let ageOnMars = mars.calcMarsYears(years);
-    expect(ageOnMars).toEqual(3.76);
+    expect(ageOnMars).toEqual('3.76');
   });
 });
 
@@ -57,7 +57,7 @@ describe("calcJupiterYears", function() {
     let years = 2;
     let jupiter = new Planet(years);
     let ageOnJupiter = jupiter.calcJupiterYears(years);
-    expect(ageOnJupiter).toEqual(23.72);
+    expect(ageOnJupiter).toEqual('23.72');
   });
 });
 
@@ -67,6 +67,6 @@ describe("calcAgeInSec", function() {
   it("should calculate the difference in seconds between current date and entered b-day", function() {
     let birthday = new MyDate(2016, 10, 21);
     let ageInSeconds = birthday.calcAgeInSec();
-    expect(ageInSeconds).toEqual(1 * 365 * 86400);
+    expect(ageInSeconds).toEqual('31536000');
   });
 }); //This test will initially fail. See notes about changing currentDate value in calc-backend.js for testing.
