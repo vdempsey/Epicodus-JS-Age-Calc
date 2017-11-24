@@ -43,9 +43,9 @@
             </select> -->
             <div class="birthday-group">
               <label for="birthday">Enter your birthday:</label>
-              <input id="month" type="text" placeholder="mm">
-              <input id="date" type="text" placeholder="dd">
-              <input id="year" type="text" placeholder="yyyy">
+              <input id="month" class="inputs" type="text" placeholder="mm" maxlength="2">
+              <input id="date" class="inputs" type="text" placeholder="dd" maxlength="2">
+              <input id="year" class="inputs" type="text" placeholder="yyyy" maxlength="4">
               <span class="example">example: 04 12 1982</span>
             </div>
             <button type="button" id="ageBtn" class="btn">Check your age</button>
@@ -56,12 +56,17 @@
             <button type="button" id="mars" class="btn">Mars Years</button>
             <button type="button" id="jupiter" class="btn">Jupiter Years</button> -->
           </form>
-          <div id="output"><p></p></div>
           <div id="ageOutputEarth"><p></p></div>
           <div id="ageOutputMercury"><p></p></div>
           <div id="ageOutputVenus"><p></p></div>
           <div id="ageOutputMars"><p></p></div>
           <div id="ageOutputJupiter"><p></p></div>
+
+          <div id="ageOutputEarthOne"><p></p></div>
+          <div id="ageOutputMercuryOne"><p></p></div>
+          <div id="ageOutputVenusOne"><p></p></div>
+          <div id="ageOutputMarsOne"><p></p></div>
+          <div id="ageOutputJupiterOne"><p></p></div>
         </div>
       </div>
     </div>
