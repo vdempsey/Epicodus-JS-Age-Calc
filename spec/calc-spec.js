@@ -27,7 +27,7 @@ describe("calcMercuryYears", function() {
     let years = 2;
     let mercury = new Planet(years);
     let ageOnMercury = mercury.calcMercuryYears(years);
-    expect(ageOnMercury).toEqual('0.48');
+    expect(ageOnMercury).toEqual('8.33');
   });
 });
 
@@ -37,7 +37,7 @@ describe("calcVenusYears", function() {
     let years = 2;
     let venus = new Planet(years);
     let ageOnVenus = venus.calcVenusYears(years);
-    expect(ageOnVenus).toEqual('1.24');
+    expect(ageOnVenus).toEqual('3.23');
   });
 });
 
@@ -47,7 +47,7 @@ describe("calcMarsYears", function() {
     let years = 2;
     let mars = new Planet(years);
     let ageOnMars = mars.calcMarsYears(years);
-    expect(ageOnMars).toEqual('3.76');
+    expect(ageOnMars).toEqual('1.06');
   });
 });
 
@@ -57,7 +57,7 @@ describe("calcJupiterYears", function() {
     let years = 2;
     let jupiter = new Planet(years);
     let ageOnJupiter = jupiter.calcJupiterYears(years);
-    expect(ageOnJupiter).toEqual('23.72');
+    expect(ageOnJupiter).toEqual('0.17');
   });
 });
 

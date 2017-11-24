@@ -20,22 +20,22 @@ export class Planet {
 
   calcMercuryYears(years) {
     let currentRatio = 0.24;
-    return parseFloat((years * currentRatio)).toFixed(2);
+    return parseFloat((years / currentRatio)).toFixed(2);
   }
 
   calcVenusYears(years) {
     let currentRatio = 0.62;
-    return parseFloat((years * currentRatio)).toFixed(2);
+    return parseFloat((years / currentRatio)).toFixed(2);
   }
 
   calcMarsYears(years) {
     let currentRatio = 1.88;
-    return parseFloat((years * currentRatio)).toFixed(2);
+    return parseFloat((years / currentRatio)).toFixed(2);
   }
 
   calcJupiterYears(years) {
     let currentRatio = 11.86;
-    return parseFloat((years * currentRatio)).toFixed(2);
+    return parseFloat((years / currentRatio)).toFixed(2);
   }
 
 };
