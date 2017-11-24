@@ -13,80 +13,77 @@ $(document).ready(function() {
     $(".inputs").val("");
   });
   $("#ageBtn").click(function(event){
-
-
-      event.preventDefault();
-        if (document.getElementById("age").value.length == 0) {
-          $("#ageOutputEarth").empty();
-          $("#ageOutputMercury").empty();
-          $("#ageOutputVenus").empty();
-          $("#ageOutputMars").empty();
-          $("#ageOutputEarthOne").empty();
-          $("#ageOutputMercuryOne").empty();
-          $("#ageOutputVenusOne").empty();
-          $("#ageOutputMarsOne").empty();
-          $("#ageOutputJupiterOne").empty();
-          $("#ageOutputJupiter").empty();
-          let year = parseInt($("#year").val());
-          let month = parseInt($("#month").val()) - 1;
-          let date = parseInt($("#date").val());
-          let newBirthday = new MyDate(year, month, date);
-          let age = newBirthday.calcAgeInSec();
-          let now = new Date();
-          let currentYear = now.getFullYear();
-          let seconds = age;
-          let ageInSeconds = new Planet(seconds);
-          let ageInYears = ageInSeconds.calcAgeInYear(seconds);
-          let mercury = new Planet(ageInYears);
-          let venus = new Planet(ageInYears);
-          let mars = new Planet(ageInYears);
-          let jupiter = new Planet(ageInYears);
-          let ageOnMercury = mercury.calcMercuryYears(ageInYears);
-          let ageOnVenus = venus.calcVenusYears(ageInYears);
-          let ageOnMars = mars.calcMarsYears(ageInYears);
-          let ageOnJupiter = jupiter.calcJupiterYears(ageInYears);
-      // else {
-      $("#ageOutputEarthOne").text("On Earth, you are " + age + " seconds old. Or " + ageInYears + " years");
-      $("#ageOutputMercuryOne").text("On Mercury, you are " + ageOnMercury + " years old.");
-      $("#ageOutputVenusOne").text("On Venus, you are " + ageOnVenus + " years old.");
-      $("#ageOutputMarsOne").text("On Mars, you are " + ageOnMars + " years old.");
-      $("#ageOutputJupiterOne").text("On Jupiter, you are " + ageOnJupiter + " years old.");
-    // }
-    }
-
-    else {
+  event.preventDefault();
+  if (document.getElementById("age").value.length == 0) {
+      $("#ageOutputEarth").empty();
+      $("#ageOutputMercury").empty();
+      $("#ageOutputVenus").empty();
+      $("#ageOutputMars").empty();
       $("#ageOutputEarthOne").empty();
       $("#ageOutputMercuryOne").empty();
       $("#ageOutputVenusOne").empty();
       $("#ageOutputMarsOne").empty();
       $("#ageOutputJupiterOne").empty();
-      $("#ageOutputEarth").empty();
-      $("#ageOutputMercury").empty();
-      $("#ageOutputVenus").empty();
-      $("#ageOutputMars").empty();
       $("#ageOutputJupiter").empty();
-      let input = parseInt($("#age").val());
-      let earthYears = new Planet(input);
-      let result = earthYears.ageYearToSec(input);
-      let newMercury = new Planet(input);
-      let newVenus = new Planet(input);
-      let newMars = new Planet(input);
-      let newJupiter = new Planet(input);
-      let newAgeOnMercury = newMercury.calcMercuryYears(input);
-      let newAgeOnVenus = newVenus.calcVenusYears(input);
-      let newAgeOnMars = newMars.calcMarsYears(input);
-      let newAgeOnJupiter = newJupiter.calcJupiterYears(input);
-      $("#ageOutputEarth").text("On Earth, you are " + result + " seconds old.");
-      $("#ageOutputMercury").text("On Mercury, you are " + newAgeOnMercury + " years old.");
-      $("#ageOutputVenus").text("On Venus, you are " + newAgeOnVenus + " years old.");
-      $("#ageOutputMars").text("On Mars, you are " + newAgeOnMars + " years old.");
-      $("#ageOutputJupiter").text("On Jupiter, you are " + newAgeOnJupiter + " years old.");
-    }
-
-  });
-
-
-
+      let year = parseInt($("#year").val());
+      let month = parseInt($("#month").val()) - 1;
+      let date = parseInt($("#date").val());
+      let newBirthday = new MyDate(year, month, date);
+      let age = newBirthday.calcAgeInSec();
+      let now = new Date();
+      let currentYear = now.getFullYear();
+      let seconds = age;
+      let ageInSeconds = new Planet(seconds);
+      let ageInYears = ageInSeconds.calcAgeInYear(seconds);
+      let mercury = new Planet(ageInYears);
+      let venus = new Planet(ageInYears);
+      let mars = new Planet(ageInYears);
+      let jupiter = new Planet(ageInYears);
+      let ageOnMercury = mercury.calcMercuryYears(ageInYears);
+      let ageOnVenus = venus.calcVenusYears(ageInYears);
+      let ageOnMars = mars.calcMarsYears(ageInYears);
+      let ageOnJupiter = jupiter.calcJupiterYears(ageInYears);
+      if (month >= 12 || date >= 31 || year > currentYear) {
+          month = false;
+          date = false;
+          year = false;
+          $("#ageOutputEarth").text("Please check on your entry. See example for formatting. Make sure that you didn't enter a month greater than 12, or date greater than 31, or year, greater than " + currentYear);
+        } else {
+          $("#ageOutputEarthOne").text("On Earth, you are " + age + " seconds old. Or " + ageInYears + " years");
+          $("#ageOutputMercuryOne").text("On Mercury, you are " + ageOnMercury + " years old.");
+          $("#ageOutputVenusOne").text("On Venus, you are " + ageOnVenus + " years old.");
+          $("#ageOutputMarsOne").text("On Mars, you are " + ageOnMars + " years old.");
+          $("#ageOutputJupiterOne").text("On Jupiter, you are " + ageOnJupiter + " years old.");
+        }
+      } else {
+          $("#ageOutputEarthOne").empty();
+          $("#ageOutputMercuryOne").empty();
+          $("#ageOutputVenusOne").empty();
+          $("#ageOutputMarsOne").empty();
+          $("#ageOutputJupiterOne").empty();
+          $("#ageOutputEarth").empty();
+          $("#ageOutputMercury").empty();
+          $("#ageOutputVenus").empty();
+          $("#ageOutputMars").empty();
+          $("#ageOutputJupiter").empty();
+          let input = parseInt($("#age").val());
+          let earthYears = new Planet(input);
+          let result = earthYears.ageYearToSec(input);
+          let newMercury = new Planet(input);
+          let newVenus = new Planet(input);
+          let newMars = new Planet(input);
+          let newJupiter = new Planet(input);
+          let newAgeOnMercury = newMercury.calcMercuryYears(input);
+          let newAgeOnVenus = newVenus.calcVenusYears(input);
+          let newAgeOnMars = newMars.calcMarsYears(input);
+          let newAgeOnJupiter = newJupiter.calcJupiterYears(input);
+          $("#ageOutputEarth").text("On Earth, you are " + result + " seconds old.");
+          $("#ageOutputMercury").text("On Mercury, you are " + newAgeOnMercury + " years old.");
+          $("#ageOutputVenus").text("On Venus, you are " + newAgeOnVenus + " years old.");
+          $("#ageOutputMars").text("On Mars, you are " + newAgeOnMars + " years old.");
+          $("#ageOutputJupiter").text("On Jupiter, you are " + newAgeOnJupiter + " years old.");
+        }
+      });
 });
 
 
