@@ -8,6 +8,13 @@ export class Planet {
       Mars: 1.88,
       Jupiter: 11.86
     };
+    // this.planetLifeExpectancy = {
+    //   Earth: 100,
+    //   Mercury: 24,
+    //   Venus: 62,
+    //   Mars: 188,
+    //   Jupiter: 118.6
+    // };
     const earthDaysInYear = 365;
     const earthDayInSec = 86400;
   }
@@ -16,10 +23,19 @@ export class Planet {
     years = parseFloat(years).toFixed(2);
     let ratio = this.planetRatios[this.name];
     let value = parseFloat(years / ratio).toFixed(2);
+    value = value.replace(/\.00$/,'');
     return value;
   }
 
-};
+  calcRemainingYears(years) {
+    years = parseFloat(years).toFixed(2);
+    let lifeExpectancyBase = this.planetRatios[this.name] * 100;
+    let remaining = parseFloat(lifeExpectancyBase - years).toFixed(2);
+    remaining = remaining.replace(/\.00$/,'');
+    return remaining;
+  }
+
+}
 
 
 export class MyDate {
@@ -35,7 +51,7 @@ export class MyDate {
     return ageInSeconds;
   }
 
-};
+}
 
 export class Age {
   constructor(years, seconds) {
@@ -52,7 +68,8 @@ export class Age {
 
   ageSecondsToYear(seconds) {
     let value = parseFloat(seconds / (86400 * 365)).toFixed(2);
+    value = value.replace(/\.00$/,'');
     return value;
   }
 
-};
+}

@@ -15,8 +15,19 @@ describe("ageSecondsToYear", function() {
   it("should transform age in seconds to age in years", function() {
     let seconds = 94608000;
     let age = new Age(seconds);
-    expect(age.ageSecondsToYear(seconds)).toEqual("3.00");
+    expect(age.ageSecondsToYear(seconds)).toEqual("3");
   });
+});
+
+describe("calcRemainingYears", function() {
+
+  it("should transform age in seconds to age in years", function() {
+    let years = 15;
+    let earth = new Planet("Earth");
+    let yearsRemaining = earth.calcRemainingYears(years);
+    expect(earth.calcRemainingYears(years)).toEqual("85");
+  });
+
 });
 
 //Start Non-Earth Planet Years
