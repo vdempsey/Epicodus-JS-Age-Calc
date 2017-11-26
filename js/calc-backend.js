@@ -1,41 +1,22 @@
 export class Planet {
-  constructor(name, years, seconds, ratio) {
+  constructor(name) {
     this.name = name;
-    this.years = years;
-    this.seconds = seconds;
-    this.ratio = ratio;
-  }
-
-
-  ageYearToSec(earthAgeInYears) {
+    this.planetRatios = {
+      Earth: 1,
+      Mercury: 0.24,
+      Venus: 0.62,
+      Mars: 1.88,
+      Jupiter: 11.86
+    };
     const earthDaysInYear = 365;
     const earthDayInSec = 86400;
-    const earthYearInSec = 365 * 86400;
-    return earthAgeInYears * earthYearInSec;
   }
 
-  calcAgeInYear(ageInSeconds) {
-    return parseFloat((ageInSeconds / (86400 * 365)).toFixed(2));
-  }
-
-  calcMercuryYears(years) {
-    let currentRatio = 0.24;
-    return parseFloat((years / currentRatio)).toFixed(2);
-  }
-
-  calcVenusYears(years) {
-    let currentRatio = 0.62;
-    return parseFloat((years / currentRatio)).toFixed(2);
-  }
-
-  calcMarsYears(years) {
-    let currentRatio = 1.88;
-    return parseFloat((years / currentRatio)).toFixed(2);
-  }
-
-  calcJupiterYears(years) {
-    let currentRatio = 11.86;
-    return parseFloat((years / currentRatio)).toFixed(2);
+  calcPlanetsYears(years) {
+    years = parseFloat(years).toFixed(2);
+    let ratio = this.planetRatios[this.name];
+    let value = parseFloat(years / ratio).toFixed(2);
+    return value;
   }
 
 };
@@ -46,13 +27,32 @@ export class MyDate {
     this.userInput = new Date(year, month, date);
   }
 
-
     calcAgeInSec() {
     // for testing, use: let currentDate = new Date(2017, 10, 21);
     let currentDate = new Date(); //comment this out when testing
-    let ageInSeconds = parseFloat((currentDate.getTime() - this.userInput.getTime())/1000).toFixed(2);
+    let ageInSeconds = parseFloat((currentDate.getTime() - this.userInput.getTime())/1000).toFixed(0);
     // 1 sec = 1000 miliseconds. getTime() returns miliseconds
     return ageInSeconds;
+  }
+
+};
+
+export class Age {
+  constructor(years, seconds) {
+    this.years = years;
+    this.seconds = seconds;
+    const earthDaysInYear = 365;
+    const earthDayInSec = 86400;
+  }
+
+  ageYearToSec(years) {
+    let value = this.years * 365 * 86400;
+    return value;
+  }
+
+  ageSecondsToYear(seconds) {
+    let value = parseFloat(seconds / (86400 * 365)).toFixed(2);
+    return value;
   }
 
 };
