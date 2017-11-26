@@ -1,6 +1,10 @@
 import { Planet, MyDate, Age } from './../js/calc-backend.js';
 
 $(document).ready(function() {
+  let mercury = new Planet("Mercury");
+  let venus = new Planet("Venus");
+  let mars = new Planet("Mars");
+  let jupiter = new Planet("Jupiter");
   $(".inputs").keyup(function () {
     if (this.value.length == this.maxLength) {
       $(this).next('.inputs').focus();
@@ -14,21 +18,18 @@ $(document).ready(function() {
   });
   $("#ageBtn").click(function(event){
   event.preventDefault();
-    let mercury = new Planet("Mercury");
-    let venus = new Planet("Venus");
-    let mars = new Planet("Mars");
-    let jupiter = new Planet("Jupiter");
     if (document.getElementById("age").value.length == 0) {
-      $("#ageOutputEarth").empty();
-      $("#ageOutputMercury").empty();
-      $("#ageOutputVenus").empty();
-      $("#ageOutputMars").empty();
-      $("#ageOutputEarthOne").empty();
-      $("#ageOutputMercuryOne").empty();
-      $("#ageOutputVenusOne").empty();
-      $("#ageOutputMarsOne").empty();
-      $("#ageOutputJupiterOne").empty();
-      $("#ageOutputJupiter").empty();
+      $(".clearit").empty();
+      // $("#ageOutputEarth").empty();
+      // $("#ageOutputMercury").empty();
+      // $("#ageOutputVenus").empty();
+      // $("#ageOutputMars").empty();
+      // $("#ageOutputEarthOne").empty();
+      // $("#ageOutputMercuryOne").empty();
+      // $("#ageOutputVenusOne").empty();
+      // $("#ageOutputMarsOne").empty();
+      // $("#ageOutputJupiterOne").empty();
+      // $("#ageOutputJupiter").empty();
       let year = parseInt($("#year").val());
       let month = parseInt($("#month").val()) - 1;
       let date = parseInt($("#date").val());
@@ -52,16 +53,17 @@ $(document).ready(function() {
           $("#ageOutputJupiterOne").text("On Jupiter, you are " + jupiter.calcPlanetsYears(ageInYears) + " years old.");
         }
       } else {
-          $("#ageOutputEarthOne").empty();
-          $("#ageOutputMercuryOne").empty();
-          $("#ageOutputVenusOne").empty();
-          $("#ageOutputMarsOne").empty();
-          $("#ageOutputJupiterOne").empty();
-          $("#ageOutputEarth").empty();
-          $("#ageOutputMercury").empty();
-          $("#ageOutputVenus").empty();
-          $("#ageOutputMars").empty();
-          $("#ageOutputJupiter").empty();
+          $(".clearit").empty();
+          // $("#ageOutputEarthOne").empty();
+          // $("#ageOutputMercuryOne").empty();
+          // $("#ageOutputVenusOne").empty();
+          // $("#ageOutputMarsOne").empty();
+          // $("#ageOutputJupiterOne").empty();
+          // $("#ageOutputEarth").empty();
+          // $("#ageOutputMercury").empty();
+          // $("#ageOutputVenus").empty();
+          // $("#ageOutputMars").empty();
+          // $("#ageOutputJupiter").empty();
           let years = parseFloat($("#age").val()).toFixed(2);
           let earthYears = new Age(years);
           $("#ageOutputEarth").text("On Earth, you are " + earthYears.ageYearToSec(years) + " seconds old.");

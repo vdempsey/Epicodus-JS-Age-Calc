@@ -37,7 +37,7 @@ describe("calcPlanetsYears", function() {
   it("should transform earth years into Mercury years", function() {
     let years = 2;
     let mercury = new Planet("Mercury");
-    expect(mercury.calcPlanetsYears(years)).toEqual("8.33");
+    expect(mercury.calcPlanetsYears(years)).toEqual('8.33');
   });
 
   it("should transform earth years into Venus years", function() {

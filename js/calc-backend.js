@@ -62,7 +62,7 @@ export class Age {
   }
 
   ageYearToSec(years) {
-    let value = this.years * 365 * 86400;
+    let value = parseInt(this.years * 365 * 86400);
     return value;
   }
 
