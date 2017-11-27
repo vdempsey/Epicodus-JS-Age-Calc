@@ -1,4 +1,4 @@
-# Epicodus-JS-Haiku
+# Epicodus-JS-Age-Calculator
 
 #### _Space Age Calculator Application, November 17, 2017_
 
