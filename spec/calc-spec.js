@@ -73,7 +73,7 @@ describe("yearsRemaining", function() {
     let mercury = new LifeRemaining("Mercury");
     let qOneYes = true;
     let qTwoYes = true;
-    let yearsLeft = mercury.yearsRemaining(years);
+    let yearsLeft = mercury.yearsRemaining(years, qOneYes, qTwoYes);
     expect(yearsLeft).toEqual("333.33");
   });
 
@@ -82,7 +82,7 @@ describe("yearsRemaining", function() {
     let venus = new LifeRemaining("Venus");
     let qOneYes = true;
     let qTwoYes = true;
-    let yearsLeft = venus.yearsRemaining(years);
+    let yearsLeft = venus.yearsRemaining(years, qOneYes, qTwoYes);
     expect(yearsLeft).toEqual("129.03");
   });
 
@@ -91,7 +91,7 @@ describe("yearsRemaining", function() {
     let mars = new LifeRemaining("Mars");
     let qOneYes = true;
     let qTwoYes = true;
-    let yearsLeft = mars.yearsRemaining(years);
+    let yearsLeft = mars.yearsRemaining(years, qOneYes, qTwoYes);
     expect(yearsLeft).toEqual("42.55");
   });
 
@@ -100,7 +100,17 @@ describe("yearsRemaining", function() {
     let jupiter = new LifeRemaining("Jupiter");
     let qOneYes = true;
     let qTwoYes = true;
-    let yearsLeft = jupiter.yearsRemaining(years);
+    let yearsLeft = jupiter.yearsRemaining(years, qOneYes, qTwoYes);
     expect(yearsLeft).toEqual("6.75");
+  });
+});
+
+describe("oldie", function() {
+
+  it("should calculate years over average life expectancy on Earth", function() {
+    let years = 120;
+    let jupiter = new LifeRemaining("Jupiter");
+    let yearsLeft = jupiter.oldie(years);
+    expect(yearsLeft).toEqual(20);
   });
 });
