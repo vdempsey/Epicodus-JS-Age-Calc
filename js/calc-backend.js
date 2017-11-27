@@ -92,10 +92,6 @@ export class LifeRemaining {
       qTwo = true;
     }
 
-    // if (years > 100) {
-    //   let value = ((years / this.ratio[this.name]) - this.expectancy[this.name]).toFixed(2);
-    //   value = value.replace(/\.00$/,'');
-    //   return value;
     if (!qOne && !qTwo) {
       let value = (expectancyBase - (years / this.planetRatios[this.name]) + (10 / this.planetRatios[this.name])).toFixed(2);
       value = value.replace(/\.00$/,'');

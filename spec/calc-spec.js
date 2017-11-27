@@ -5,7 +5,7 @@ describe("ageYearToSec", function() {
   it("should calculate entered age in seconds on Earth", function() {
     let earthAgeInYears = 3;
     let age = new Age(earthAgeInYears);
-    expect(age.ageYearToSec(earthAgeInYears)).toEqual(3 * 365 * 86400);
+    expect(age.ageYearToSec(earthAgeInYears)).toEqual(94608000);
   });
 
 });
