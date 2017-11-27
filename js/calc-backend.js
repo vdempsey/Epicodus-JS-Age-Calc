@@ -8,13 +8,6 @@ export class Planet {
       Mars: 1.88,
       Jupiter: 11.86
     };
-    // this.planetLifeExpectancy = {
-    //   Earth: 100,
-    //   Mercury: 24,
-    //   Venus: 62,
-    //   Mars: 188,
-    //   Jupiter: 118.6
-    // };
     const earthDaysInYear = 365;
     const earthDayInSec = 86400;
   }
@@ -25,14 +18,6 @@ export class Planet {
     let value = parseFloat(years / ratio).toFixed(2);
     value = value.replace(/\.00$/,'');
     return value;
-  }
-
-  calcRemainingYears(years) {
-    years = parseFloat(years).toFixed(2);
-    let lifeExpectancyBase = this.planetRatios[this.name] * 100;
-    let remaining = parseFloat(lifeExpectancyBase - years).toFixed(2);
-    remaining = remaining.replace(/\.00$/,'');
-    return remaining;
   }
 
 }
@@ -72,4 +57,61 @@ export class Age {
     return value;
   }
 
+}
+
+export class LifeRemaining {
+  constructor(name) {
+    this.name = name;
+    this.expectancy = {
+      Earth: 100,
+      Mercury: 100/0.24,
+      Venus: 100/0.62,
+      Mars: 100/1.88,
+      Jupiter: 100/11.86
+    };
+    this.planetRatios = {
+      Earth: 1,
+      Mercury: 0.24,
+      Venus: 0.62,
+      Mars: 1.88,
+      Jupiter: 11.86
+    };
+  }
+
+  yearsRemaining(years, qOne, qTwo) {
+    years = parseFloat(years).toFixed(2);
+    let expectancyBase = this.expectancy[this.name];
+    if(qOne == "no") {
+      qOne = false;
+    } else {
+      qOne = true;
+    }
+    if(qTwo == "no") {
+      qTwo = false;
+    } else {
+      qTwo = true;
+    }
+
+    if (!qOne && !qTwo) {
+      let value = (expectancyBase.toFixed(2) - (years / this.planetRatios[this.name]).toFixed(2) + (10 / this.planetRatios[this.name]).toFixed(2)).toFixed(2);
+      value = value.replace(/\.00$/,'');
+      return value;
+    }
+    else if (!qOne && qTwo) {
+      let value = (expectancyBase.toFixed(2) - (years / this.planetRatios[this.name]).toFixed(2)).toFixed(2);
+      value = value.replace(/\.00$/,'');
+      return value;
+    }
+    else if (qOne && qTwo) {
+      let value = (expectancyBase.toFixed(2) - (years / this.planetRatios[this.name]).toFixed(2) - (10 / this.planetRatios[this.name]).toFixed(2)).toFixed(2);
+      value = value.replace(/\.00$/,'');
+      return value;
+    }
+    else {
+      let value = (expectancyBase.toFixed(2) - (years / this.planetRatios[this.name]).toFixed(2)).toFixed(2);
+      value = value.replace(/\.00$/,'');
+      return value;
+    }
+
+  }
 }

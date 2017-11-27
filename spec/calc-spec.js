@@ -1,4 +1,4 @@
-import { Planet, MyDate, Age } from './../js/calc-backend.js';
+import { Planet, MyDate, Age, LifeRemaining } from './../js/calc-backend.js';
 
 describe("ageYearToSec", function() {
 
@@ -19,16 +19,26 @@ describe("ageSecondsToYear", function() {
   });
 });
 
-describe("calcRemainingYears", function() {
-
-  it("should transform age in seconds to age in years", function() {
-    let years = 15;
-    let earth = new Planet("Earth");
-    let yearsRemaining = earth.calcRemainingYears(years);
-    expect(earth.calcRemainingYears(years)).toEqual("85");
-  });
-
-});
+// describe("calcRemainingYears", function() {
+//
+//   it("should calculate base remaining years", function() {
+//     let years = 15;
+//     let earth = new Planet("Earth");
+//     let yearsRemaining = earth.calcRemainingYears(years);
+//     expect(earth.calcRemainingYears(years)).toEqual("85");
+//   });
+//
+// });
+//
+// describe("calcAddOrSubtractYears", function() {
+//
+//   it("should calculate additional years to add or subtract from base life expectancy", function() {
+//     let years = new Planet("questionOneYes");
+//     let additionalYears = years.calcAddOrSubtractYears();
+//     expect(years.calcAddOrSubtractYears()).toEqual(10);
+//   });
+//
+// });
 
 //Start Non-Earth Planet Years
 
@@ -68,3 +78,51 @@ describe("calcAgeInSec", function() {
     expect(birthday.calcAgeInSec()).toEqual('31536000');
   });
 }); //This test will initially fail. See notes about changing currentDate value in calc-backend.js for testing.
+
+describe("yearsRemaining", function() {
+
+  it("should calculate time remaining on Earth", function() {
+    let years = 10;
+    let earth = new LifeRemaining("Earth");
+    let qOneYes = true;
+    let qTwoYes = true;
+    let yearsLeft = earth.yearsRemaining(years, qOneYes, qTwoYes);
+    expect(yearsLeft).toEqual("80");
+  });
+
+  it("should calculate time remaining on Mercury", function() {
+    let years = 10;
+    let mercury = new LifeRemaining("Mercury");
+    let qOneYes = true;
+    let qTwoYes = true;
+    let yearsLeft = mercury.yearsRemaining(years);
+    expect(yearsLeft).toEqual("333.33");
+  });
+
+  it("should calculate time remaining on Venus", function() {
+    let years = 10;
+    let venus = new LifeRemaining("Venus");
+    let qOneYes = true;
+    let qTwoYes = true;
+    let yearsLeft = venus.yearsRemaining(years);
+    expect(yearsLeft).toEqual("129.03");
+  });
+
+  it("should calculate time remaining on Mars", function() {
+    let years = 10;
+    let mars = new LifeRemaining("Mars");
+    let qOneYes = true;
+    let qTwoYes = true;
+    let yearsLeft = mars.yearsRemaining(years);
+    expect(yearsLeft).toEqual("42.55");
+  });
+
+  it("should calculate time remaining on Jupiter", function() {
+    let years = 10;
+    let jupiter = new LifeRemaining("Jupiter");
+    let qOneYes = true;
+    let qTwoYes = true;
+    let yearsLeft = jupiter.yearsRemaining(years);
+    expect(yearsLeft).toEqual("6.75");
+  });
+});
