@@ -6,8 +6,8 @@ $(document).ready(function() {
   let venus = new Planet("Venus");
   let mars = new Planet("Mars");
   let jupiter = new Planet("Jupiter");
-  let qOne = $("input:radio[name=muffin]:checked").val();
-  let qTwo = $("input:radio[name=suit]:checked").val();
+  // let qOne = $("input:radio[name=muffin]:checked").val();
+  // let qTwo = $("input:radio[name=suit]:checked").val();
   $(".inputs").keyup(function () {
     if (this.value.length == this.maxLength) {
       $(this).next('.inputs').focus();
@@ -21,6 +21,8 @@ $(document).ready(function() {
   });
   $("#ageBtn").click(function(event){
   event.preventDefault();
+  // let qOne = $("input:radio[name=muffin]:checked").val();
+  // let qTwo = $("input:radio[name=suit]:checked").val();
     if (document.getElementById("age").value.length == 0) {
       $(".clearit").empty();
       let year = parseInt($("#year").val());
@@ -54,26 +56,28 @@ $(document).ready(function() {
           $("#ageOutputVenus").text("On Venus, you are " + venus.calcPlanetsYears(years) + " years old.");
           $("#ageOutputMars").text("On Mars, you are " + mars.calcPlanetsYears(years) + " years old.");
           $("#ageOutputJupiter").text("On Jupiter, you are " + jupiter.calcPlanetsYears(years) + " years old.");
-          $("#years-left").click(function(event){
+          $("form#life").submit(function(event){
+          event.preventDefault();
+          // $(".clearit").empty();
+          $(".clearitOne").empty();
+          let qOne = $("input:radio[name=muffin]:checked").val();
+          let qTwo = $("input:radio[name=suit]:checked").val();
           let earth = new LifeRemaining("Earth") ;
-          let yearsRemainingEarth = earth.yearsRemaining(years);
+          let yearsRemainingEarth = earth.yearsRemaining(years, qOne, qTwo);
           let mercury = new LifeRemaining("Mercury") ;
-          let yearsRemainingMercury = mercury.yearsRemaining(years);
+          let yearsRemainingMercury = mercury.yearsRemaining(years, qOne, qTwo);
           let venus = new LifeRemaining("Venus") ;
-          let yearsRemainingVenus = venus.yearsRemaining(years);
+          let yearsRemainingVenus = venus.yearsRemaining(years, qOne, qTwo);
           let jupiter = new LifeRemaining("Jupiter") ;
-          let yearsRemainingJupiter = jupiter.yearsRemaining(years);
+          let yearsRemainingJupiter = jupiter.yearsRemaining(years, qOne, qTwo);
           let mars = new LifeRemaining("Mars") ;
-          let yearsRemainingMars = mars.yearsRemaining(years);
+          let yearsRemainingMars = mars.yearsRemaining(years, qOne, qTwo);
+          $("#remainingOutputEarth").text("On Earth, you have " + yearsRemainingEarth + " years left.");
+          $("#remainingOutputMercury").text("On Mercury, you have " + yearsRemainingMercury + " years left.");
+          $("#remainingOutputVenus").text("On Venus, you have " + yearsRemainingVenus + " years left.");
+          $("#remainingOutputMars").text("On Mars, you have " + yearsRemainingMars + " years left.");
+          $("#remainingOutputJupiter").text("On Jupiter, you have " + yearsRemainingJupiter + " years left.");
 
-              // return additionaYearthlYears;
-              $("#remainingOutputEarth").text("On Earth, you have " + yearsRemainingEarth + " years left.");
-              $("#remainingOutputMercury").text("On Mercury, you have " + yearsRemainingMercury + " years left.");
-              $("#remainingOutputVenus").text("On Venus, you have " + yearsRemainingVenus + " years left.");
-              $("#remainingOutputMars").text("On Mars, you have " + yearsRemainingMars + " years left.");
-              $("#remainingOutputJupiter").text("On Jupiter, you have " + yearsRemainingJupiter + " years left.");
-
-            }
           });
         }
       });

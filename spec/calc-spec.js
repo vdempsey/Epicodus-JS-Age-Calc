@@ -19,28 +19,6 @@ describe("ageSecondsToYear", function() {
   });
 });
 
-// describe("calcRemainingYears", function() {
-//
-//   it("should calculate base remaining years", function() {
-//     let years = 15;
-//     let earth = new Planet("Earth");
-//     let yearsRemaining = earth.calcRemainingYears(years);
-//     expect(earth.calcRemainingYears(years)).toEqual("85");
-//   });
-//
-// });
-//
-// describe("calcAddOrSubtractYears", function() {
-//
-//   it("should calculate additional years to add or subtract from base life expectancy", function() {
-//     let years = new Planet("questionOneYes");
-//     let additionalYears = years.calcAddOrSubtractYears();
-//     expect(years.calcAddOrSubtractYears()).toEqual(10);
-//   });
-//
-// });
-
-//Start Non-Earth Planet Years
 
 describe("calcPlanetsYears", function() {
 

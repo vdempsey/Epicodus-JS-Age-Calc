@@ -92,26 +92,23 @@ export class LifeRemaining {
       qTwo = true;
     }
 
+
     if (!qOne && !qTwo) {
       let value = (expectancyBase.toFixed(2) - (years / this.planetRatios[this.name]).toFixed(2) + (10 / this.planetRatios[this.name]).toFixed(2)).toFixed(2);
       value = value.replace(/\.00$/,'');
       return value;
-    }
-    else if (!qOne && qTwo) {
+    } else if (!qOne && qTwo) {
       let value = (expectancyBase.toFixed(2) - (years / this.planetRatios[this.name]).toFixed(2)).toFixed(2);
       value = value.replace(/\.00$/,'');
       return value;
-    }
-    else if (qOne && qTwo) {
+    } else if (qOne && qTwo) {
       let value = (expectancyBase.toFixed(2) - (years / this.planetRatios[this.name]).toFixed(2) - (10 / this.planetRatios[this.name]).toFixed(2)).toFixed(2);
       value = value.replace(/\.00$/,'');
       return value;
-    }
-    else {
+    } else {
       let value = (expectancyBase.toFixed(2) - (years / this.planetRatios[this.name]).toFixed(2)).toFixed(2);
       value = value.replace(/\.00$/,'');
       return value;
     }
-
   }
 }

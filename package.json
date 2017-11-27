@@ -1,7 +1,7 @@
 {
   "name": "age-calculator",
   "version": "1.0.0",
-  "description": "",
+  "description": "#### _Space Age Calculator Application, November 17, 2017_",
   "main": "index.js",
   "scripts": {
     "test": "karma start karma.conf.js"
@@ -33,5 +33,14 @@
     "karma-jquery": "^0.2.2",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vdempsey/Epicodus-JS-Haiku.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vdempsey/Epicodus-JS-Haiku/issues"
+  },
+  "homepage": "https://github.com/vdempsey/Epicodus-JS-Haiku#readme"
 }
