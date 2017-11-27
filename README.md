@@ -11,7 +11,8 @@
 
 _This is an application which converts user's age to age on other planet, as well as predicts remaining years on each planet._
 
-_gh-pages link vdempsey.github.io/Epicodus-JS-Age-Calc_
+_gh-pages link:
+ vdempsey.github.io/Epicodus-JS-Age-Calc_
 
 
 ## Setup/Installation Requirements
@@ -57,7 +58,7 @@ _gh-pages link vdempsey.github.io/Epicodus-JS-Age-Calc_
 | If user's age > average life expectancy (100/1.88 on Mars), for Mars user get's calc of difference. Answers don't make a difference | 120, question one "yes", question two "yes"     |  10.64 |
 | If user's age > average life expectancy (100/11.86 on Jupiter), for Jupiter user get's calc of difference. Answers don't make a difference | 120, question one "yes", question two "yes"     |  1.69  |
 
-#####_when calculating remaining years, the user answers two questions. If the user chose "no" for Muffin man question, he/she gets extra 10 earth years to live so he/she can meet him. "yes" makes no difference for question one. If the user chose "yes" for suit question, he/she looses 10 earth years due to risk._
+_when calculating remaining years, the user answers two questions. If the user chose "no" for Muffin man question, he/she gets extra 10 earth years to live so he/she can meet him. "yes" makes no difference for question one. If the user chose "yes" for suit question, he/she looses 10 earth years due to risk._
 
 ## Known Bugs
 
