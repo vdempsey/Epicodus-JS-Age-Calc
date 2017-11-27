@@ -109,8 +109,8 @@ describe("oldie", function() {
 
   it("should calculate years over average life expectancy on Earth", function() {
     let years = 120;
-    let jupiter = new LifeRemaining("Jupiter");
-    let yearsLeft = jupiter.oldie(years);
-    expect(yearsLeft).toEqual(20);
+    let earth = new LifeRemaining("Earth");
+    let yearsLeft = earth.oldie(years);
+    expect(yearsLeft).toEqual("20");
   });
 });

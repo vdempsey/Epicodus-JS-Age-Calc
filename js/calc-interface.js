@@ -26,7 +26,7 @@ $(document).ready(function() {
   });
   $(".inputs").on("click", function() {
     $("#age").val("");
-    // $(".clearit").empty();
+    $(".clearit").empty();
   });
   $("#age").on("click", function() {
     $(".inputs").val("");
@@ -67,8 +67,9 @@ $(document).ready(function() {
               let overYearsMercury = mercuryRemaining.oldie(ageInYears);
               let overYearsVenus = venusRemaining.oldie(ageInYears);
               let overYearsJupiter = jupiterRemaining.oldie(ageInYears);
-              alert("You are old!");
-              // $("#oldie").text("Good for you!!! You outlived most of us on Earth by " + overYearsEarth + " years. If you ever make it to Mercury, you will find yourself " + overYearsMercury + "years older than most Mercurians, on Mars you surpassed them by " + overYearsMars + " years. On Venus you are oulived an average Venusian by " + overYearsVenus " years, and on Jupiter by " + overYearsJupiter + " . Now, go explore the space. You have nothing to loose.");
+              // alert("You are old!");
+              $("#oldie").text("Good for you!!! You outlived most of us on Earth by " + overYearsEarth + " years. If you ever make it to Mercury, you will find yourself " + overYearsMercury + " years older than most Mercurians, on Mars you surpassed them by " + overYearsMars + " years. On Venus you are outlived an average Venusian by " + overYearsVenus + " years, and on Jupiter by " + overYearsJupiter + " . Now, go explore the space. You have nothing to loose.");
+              // $("#oldie").text("Hello Youngster! You outlived most of us on Earth by " + overYearsEarth + " years! You outlived most of Marcians by " + overYearsMars + " years. You outlived most of creatures on Venus by " + overYearsVenus + " years. You outlived most of Mercury folks by " + overYearsMercury + " years. You outlived most of creatures on Jupiter by " + overYearsMercury + " years. Now, go explore the space. You have nothing to loose.");
             } else {
               let yearsRemainingEarth = earthRemaining.yearsRemaining(ageInYears, qOne, qTwo);
               let yearsRemainingMercury = mercuryRemaining.yearsRemaining(ageInYears, qOne, qTwo);
@@ -96,16 +97,25 @@ $(document).ready(function() {
           event.preventDefault();
           $(".clearit").empty();
           $(".clearitOne").empty();
-          let yearsRemainingEarth = earthRemaining.yearsRemaining(years, qOne, qTwo);
-          let yearsRemainingMercury = mercuryRemaining.yearsRemaining(years, qOne, qTwo);
-          let yearsRemainingVenus = venusRemaining.yearsRemaining(years, qOne, qTwo);
-          let yearsRemainingJupiter = jupiterRemaining.yearsRemaining(years, qOne, qTwo);
-          let yearsRemainingMars = marsRemaining.yearsRemaining(years, qOne, qTwo);
-          $("#remainingOutputEarth").text("On Earth, you have " + yearsRemainingEarth + " years left.");
-          $("#remainingOutputMercury").text("On Mercury, you have " + yearsRemainingMercury + " years left.");
-          $("#remainingOutputVenus").text("On Venus, you have " + yearsRemainingVenus + " years left.");
-          $("#remainingOutputMars").text("On Mars, you have " + yearsRemainingMars + " years left.");
-          $("#remainingOutputJupiter").text("On Jupiter, you have " + yearsRemainingJupiter + " years left.");
+          if (parseInt(years) > 100) {
+            let overYearsEarth = earthRemaining.oldie(years);
+            let overYearsMars = marsRemaining.oldie(years);
+            let overYearsMercury = mercuryRemaining.oldie(years);
+            let overYearsVenus = venusRemaining.oldie(years);
+            let overYearsJupiter = jupiterRemaining.oldie(years);
+            $("#oldie").text("Good for you!!! You outlived most of us on Earth by " + overYearsEarth + " years. If you ever make it to Mercury, you will find yourself " + overYearsMercury + " years older than most Mercurians, on Mars you surpassed them by " + overYearsMars + " years. On Venus you are outlived an average Venusian by " + overYearsVenus + " years, and on Jupiter by " + overYearsJupiter + " . Now, go explore the space. You have nothing to loose.");
+            } else {
+            let yearsRemainingEarth = earthRemaining.yearsRemaining(years, qOne, qTwo);
+            let yearsRemainingMercury = mercuryRemaining.yearsRemaining(years, qOne, qTwo);
+            let yearsRemainingVenus = venusRemaining.yearsRemaining(years, qOne, qTwo);
+            let yearsRemainingJupiter = jupiterRemaining.yearsRemaining(years, qOne, qTwo);
+            let yearsRemainingMars = marsRemaining.yearsRemaining(years, qOne, qTwo);
+            $("#remainingOutputEarth").text("On Earth, you have " + yearsRemainingEarth + " years left.");
+            $("#remainingOutputMercury").text("On Mercury, you have " + yearsRemainingMercury + " years left.");
+            $("#remainingOutputVenus").text("On Venus, you have " + yearsRemainingVenus + " years left.");
+            $("#remainingOutputMars").text("On Mars, you have " + yearsRemainingMars + " years left.");
+            $("#remainingOutputJupiter").text("On Jupiter, you have " + yearsRemainingJupiter + " years left.");
+            }
           });
         }
       });
