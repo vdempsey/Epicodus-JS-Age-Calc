@@ -11,9 +11,6 @@
 
 _This is an application which converts user's age to age on other planet, as well as predicts remaining years on each planet._
 
-_gh-pages link:
- vdempsey.github.io/Epicodus-JS-Age-Calc_
-
 
 ## Setup/Installation Requirements
 
